@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY", "1insecure1-1default1")
 
 # DEBUG
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS
 if DEBUG:
@@ -44,27 +44,15 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
     "django.contrib.sitemaps",
-    # 3rd party - Auth
-    "allauth",
-    "allauth.account",
-    "allauth.socialaccount",
-    "allauth.socialaccount.providers.google",
     # 3rd party - Other
     "parler",
     "taggit",
     "meta",
-    "tinymce",
     "easy_thumbnails",
     "filer",
     "mptt",
-    "crispy_forms",
-    "crispy_bootstrap5",
     # Local
-    "core",
-    "accounts",
-    "subscriptions",
-    "deliveries",
-    "blog",
+    "core"
 ]
 
 SITE_ID = 1
@@ -130,6 +118,14 @@ if os.getenv("DATABASE_URL"):
     DATABASES = {
         "default": dj_database_url.config(default=os.getenv("DATABASE_URL"))
     }
+elif DEBUG:
+    # SQLite для локальной разработки
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
 else:
     DATABASES = {
         "default": {
@@ -144,9 +140,6 @@ else:
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Локальная разработка
-if not os.environ.get('DOCKER_ENV') and any(cmd in sys.argv for cmd in ['runserver', 'migrate', 'makemigrations', 'shell', 'createsuperuser']):
-    DATABASES['default']['HOST'] = 'localhost'
 
 # Cache (Redis)
 if os.environ.get('REDIS_URL'):
@@ -166,92 +159,18 @@ else:
         }
     }
 
-# ===========================================
-# AUTHENTICATION
-# ===========================================
-AUTH_USER_MODEL = "accounts.User"
-
-AUTHENTICATION_BACKENDS = [
-    "django.contrib.auth.backends.ModelBackend",
-    "allauth.account.auth_backends.AuthenticationBackend",
-]
-
-# ===========================================
-# ALLAUTH - Custom User без username
-# ===========================================
-ACCOUNT_USER_MODEL_USERNAME_FIELD = None
-ACCOUNT_LOGIN_METHODS = {"email"}
-ACCOUNT_SIGNUP_FIELDS = ["email*", "first_name*", "last_name*", "password1*", "password2*"]
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
-ACCOUNT_EMAIL_SUBJECT_PREFIX = ""
-
-# Для email ссылок
-if DEBUG:
-    ACCOUNT_DEFAULT_HTTP_PROTOCOL = "http"
-else:
-    ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
-
-LOGIN_REDIRECT_URL = "/dashboard/"
-LOGOUT_REDIRECT_URL = "/"
-LOGIN_URL = "/account/login/"
-
-# Google OAuth
-SOCIALACCOUNT_PROVIDERS = {
-    "google": {
-        "SCOPE": ["profile", "email"],
-        "AUTH_PARAMS": {"access_type": "online"},
-        "APP": {
-            "client_id": os.getenv("GOOGLE_CLIENT_ID", ""),
-            "secret": os.getenv("GOOGLE_CLIENT_SECRET", ""),
-        },
-    }
-}
-
-# ===========================================
-# SENDPULSE
-# ===========================================
-SENDPULSE_API_USER_ID = os.getenv("SENDPULSE_API_USER_ID", "")
-SENDPULSE_API_SECRET = os.getenv("SENDPULSE_API_SECRET", "")
-SENDPULSE_FROM_EMAIL = os.getenv("SENDPULSE_FROM_EMAIL", "noreply@ciaorentcar.com")
-SENDPULSE_FROM_NAME = os.getenv("SENDPULSE_FROM_NAME", "ciaorentcarPerPost")
-
-
-# Allauth Social
-SOCIALACCOUNT_AUTO_SIGNUP = True
-SOCIALACCOUNT_EMAIL_AUTHENTICATION = True
-SOCIALACCOUNT_EMAIL_AUTHENTICATION_AUTO_CONNECT = True
-SOCIALACCOUNT_LOGIN_ON_GET = True
-
-# Custom Adapter для HTML emails
-ACCOUNT_ADAPTER = 'accounts.adapters.HTMLEmailAccountAdapter'
-
-# Custom signup form с DSGVO согласиями
-ACCOUNT_FORMS = {
-    "signup": "accounts.forms.CustomSignupForm",
-}
-
-# Password validation
-AUTH_PASSWORD_VALIDATORS = [
-    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
-]
-
-ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
-ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = "/dashboard/"
 
 # ===========================================
 # INTERNATIONALIZATION (DE primary, EN secondary)
 # ===========================================
-LANGUAGE_CODE = "de"
+LANGUAGE_CODE = "it"
 TIME_ZONE = "Europe/Berlin"
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
 LANGUAGES = [
-    ("de", _("Deutsch")),
+    ("it", _("Deutsch")),
     ("en", _("English")),
 ]
 
@@ -259,11 +178,11 @@ LOCALE_PATHS = [BASE_DIR / "locale"]
 
 PARLER_LANGUAGES = {
     SITE_ID: (
-        {"code": "de", "fallbacks": ["en"], "hide_untranslated": False},
-        {"code": "en", "fallbacks": ["de"], "hide_untranslated": False},
+        {"code": "it", "fallbacks": ["en"], "hide_untranslated": False},
+        {"code": "en", "fallbacks": ["it"], "hide_untranslated": False},
     ),
     "default": {
-        "fallbacks": ["de"],
+        "fallbacks": ["it"],
         "hide_untranslated": False,
     },
 }
@@ -310,37 +229,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "")
 
-DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "ciaorentcarPerPost <service@ciaorentcar.com>")
-
-# ===========================================
-# PayPal
-# ===========================================
-PAYPAL_CLIENT_ID = os.getenv("PAYPAL_CLIENT_ID", default="")
-PAYPAL_SECRET = os.getenv("PAYPAL_SECRET", default="")
-PAYPAL_WEBHOOK_ID = os.getenv("PAYPAL_WEBHOOK_ID", default="")
-PAYPAL_MODE = os.getenv("PAYPAL_MODE", default="sandbox")
-
-if PAYPAL_MODE == "sandbox":
-    PAYPAL_API_URL = "https://api-m.sandbox.paypal.com"
-else:
-    PAYPAL_API_URL = "https://api-m.paypal.com"
-
-
-# ===========================================
-# DHL API (Tracking)
-# ===========================================
-DHL_API_KEY = os.getenv("DHL_API_KEY", "")
-DHL_API_SECRET = os.getenv("DHL_API_SECRET", "")
-
-# ===========================================
-# CELERY
-# ===========================================
-CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL", "redis://localhost:6379/0")
-CELERY_RESULT_BACKEND = os.getenv("CELERY_RESULT_BACKEND", "redis://localhost:6379/0")
-CELERY_ACCEPT_CONTENT = ["json"]
-CELERY_TASK_SERIALIZER = "json"
-CELERY_RESULT_SERIALIZER = "json"
-CELERY_TIMEZONE = TIME_ZONE
+DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "ciaorentcar <info@ciaorentcar.com>")
 
 # ===========================================
 # THUMBNAILS (Filer)

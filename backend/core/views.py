@@ -10,21 +10,4 @@ from django.urls import path
 
 def index(request):
     """Главная страница."""
-    from subscriptions.models import Plan
-    from blog.models import BlogPost
-    
-    plans = Plan.objects.filter(is_active=True).order_by("price")
-    
-    latest_posts = BlogPost.objects.filter(
-        status=BlogPost.Status.PUBLISHED
-    ).select_related("category").order_by("-published_at")[:3]
-    
-    return render(request, "pages/index.html", {
-        "plans": plans,
-        "latest_posts": latest_posts,
-    })
-
-
-def cookies(request):
-    """Cookie-Einstellungen."""
-    return render(request, "pages/cookies.html")
+    return render(request, "pages/index.html")

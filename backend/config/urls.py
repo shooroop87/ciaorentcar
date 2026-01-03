@@ -9,20 +9,17 @@ from django.urls import include, path, re_path
 from django.views.i18n import set_language
 from django.contrib.sitemaps.views import sitemap
 from django.views.generic import TemplateView
-from core.sitemaps import StaticSitemap, BlogSitemap
+from core.sitemaps import StaticSitemap
 
 sitemaps = {
     'static': StaticSitemap,
-    'blog': BlogSitemap,
 }
 
 # --- URLs без языкового префикса ---
 urlpatterns = [
     path("set-language/", set_language, name="set_language"),
     path("admin/", admin.site.urls),
-    path("tinymce/", include("tinymce.urls")),
     path("filer/", include("filer.urls")),
-    path("blog/", include("blog.urls")),
     path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="sitemap"),
     path("robots.txt", TemplateView.as_view(template_name="robots.txt", content_type="text/plain"), name="robots"),
 ]
