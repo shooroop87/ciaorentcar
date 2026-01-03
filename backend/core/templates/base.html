@@ -1,6 +1,6 @@
 {% load static i18n %}
 <!DOCTYPE html>
-<html lang="{{ LANGUAGE_CODE|default:'de' }}">
+<html lang="{{ LANGUAGE_CODE|default:'it' }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -147,44 +147,6 @@
     
     {% block extra_js %}{% endblock %}
 
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5VTCE2MQDN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5VTCE2MQDN');
-</script>
-    <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=105948994', 'ym');
-
-    ym(105948994, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/105948994" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-<!-- ciaorentcarPerPost Analytics -->
-<script src="{% static 'js/analytics.js' %}"></script>
-{% block analytics_events %}{% endblock %}
-<script>
-// Auto-open login modal from URL parameter
-document.addEventListener('DOMContentLoaded', function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('login') === '1') {
-        if (typeof openAuthModal === 'function') {
-            openAuthModal('login');
-        }
-        window.history.replaceState({}, document.title, window.location.pathname);
-    }
-});
-</script>
 {% include "includes/gdpr_modal.html" %}
 </body>
 </html>
