@@ -1,4 +1,4 @@
-# ciaorentcarbox — Django
+# ciaorentcar — Django
 
 ## 🚀 Запуск проекта локально через Docker
 
