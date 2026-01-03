@@ -2872,14 +2872,11 @@ body {
   width: 100%;
 }
 .header .main-header .header-left .header-logo {
-  max-width: 150px;
+  max-width: 240px;
   width: 100%;
 }
 .header .main-header .header-left .header-logo a {
   display: block;
-}
-.header .main-header .header-left .header-logo a img {
-  min-height: 37px;
 }
 .header .main-header .header-left .header-nav {
   display: inline-block;
@@ -6431,7 +6428,7 @@ footer a {
   background-color: #ffffff;
   display: flex;
   align-items: center;
-  min-height: 83px;
+  min-height: 63px;
 }
 .box-number-info .text-number {
   display: inline-block;
@@ -7663,8 +7660,8 @@ footer a {
   max-width: 1366px;
   background-color: #000000;
   border-radius: 0 0 6px 6px;
-  top: 0px;
-  bottom: auto;
+  top: auto;
+  bottom: 0px;
 }
 .box-search-ride-5 .search-item .search-inputs .search-input {
   color: #fff;

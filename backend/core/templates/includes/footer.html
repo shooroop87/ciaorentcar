@@ -1,90 +1,102 @@
-{% load static %}
+{% load static i18n %}
 <footer class="footer footer-white">
   <div class="footer-1">
     <div class="container-sub">
       <div class="box-footer-top">
         <div class="row align-items-center">
           <div class="col-lg-6 col-md-6 text-md-start text-center mb-15 wow fadeInUp">
-            <div class="d-flex align-items-center justify-content-md-start justify-content-center"><a class="mr-30" href="#"><img src="{% static 'imgs/template/logo-black.svg' %}" alt="Luxride"></a><a class="text-14-medium call-phone color-white hover-up" href="tel:+41227157000">+41 22 715 7000</a></div>
+            <div class="d-flex align-items-center justify-content-md-start justify-content-center">
+              <a class="mr-30" href="{% url 'index' %}">
+                <img src="https://www.ciaorentcar.com/wp-content/uploads/2019/06/logo_rgd_300dpi_600x96px.png" alt="Ciao Rent Car" style="max-height: 40px;">
+              </a>
+            </div>
           </div>
           <div class="col-lg-6 col-md-6 text-md-end text-center mb-15 wow fadeInUp">
-            <div class="d-flex align-items-center justify-content-md-end justify-content-center"><span class="text-18-medium color-white mr-10">Follow Us</span><a class="icon-socials icon-facebook" href="#"></a><a class="icon-socials icon-twitter" href="#"></a><a class="icon-socials icon-instagram" href="#"></a><a class="icon-socials icon-linkedin" href="#"></a></div>
+            <div class="d-flex align-items-center justify-content-md-end justify-content-center">
+              <span class="text-18-medium color-white mr-10">{% trans "Seguici" %}</span>
+              <a class="icon-socials icon-facebook" href="#"></a>
+              <a class="icon-socials icon-instagram" href="#"></a>
+              <a class="icon-socials icon-linkedin" href="#"></a>
+            </div>
           </div>
         </div>
       </div>
       <div class="row mb-40">
-        <div class="col-lg-3 width-20 wow fadeInUp">
-          <h5 class="text-18-medium color-white mb-20">Company</h5>
-          <ul class="menu-footer">
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Our offerings</a></li>
-            <li><a href="#">Newsroom</a></li>
-            <li><a href="#">Investors</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Gift cards</a></li>
-          </ul>
-        </div>
+        <!-- Milano Stazione Centrale -->
         <div class="col-lg-3 width-20 mb-30 wow fadeInUp">
-          <h5 class="text-18-medium color-white mb-20">Top cities</h5>
+          <h5 class="text-18-medium color-white mb-20">{% trans "Milano Centrale" %}</h5>
           <ul class="menu-footer">
-            <li><a href="about.html">New York</a></li>
-            <li><a href="our-team.html">London</a></li>
-            <li><a href="#">Berlin</a></li>
-            <li><a href="#">Los Angeles</a></li>
-            <li><a href="#">Paris</a></li>
+            <li>Via Roberto Lepetit, 18 (MI)</li>
+            <li><a href="tel:+390266988508">+39 02 6698 8508</a></li>
+            <li><a href="mailto:milanocentrale@ciaorentcar.com">milanocentrale@ciaorentcar.com</a></li>
+            <li><a href="https://wa.me/390266988508">Whatsapp</a></li>
+            <li class="text-12 color-grey">{% trans "Riconsegna h24" %}</li>
           </ul>
         </div>
+        
+        <!-- Aeroporto Linate -->
         <div class="col-lg-3 width-20 mb-30 wow fadeInUp">
-          <h5 class="text-18-medium color-white mb-20">Explore</h5>
+          <h5 class="text-18-medium color-white mb-20">{% trans "Aeroporto Linate" %}</h5>
           <ul class="menu-footer">
-            <li><a href="#">Intercity rides</a></li>
-            <li><a href="#">Limousine service</a></li>
-            <li><a href="#">Chauffeur service</a></li>
-            <li><a href="#">Private car service</a></li>
-            <li><a href="#">Ground transportation</a></li>
-            <li><a href="#">Airport transfer</a></li>
+            <li>Via Novegro, 31 (MI)</li>
+            <li><a href="tel:+390220228308">+39 02 2022 8308</a></li>
+            <li><a href="mailto:linate@ciaorentcar.com">linate@ciaorentcar.com</a></li>
+            <li><a href="https://wa.me/390220228308">Whatsapp</a></li>
+            <li class="text-12 color-grey">{% trans "Riconsegna h24" %}</li>
           </ul>
         </div>
+        
+        <!-- Aeroporto Bergamo -->
         <div class="col-lg-3 width-20 mb-30 wow fadeInUp">
-          <h5 class="text-18-medium color-white mb-20">Classes</h5>
+          <h5 class="text-18-medium color-white mb-20">{% trans "Aeroporto Bergamo" %}</h5>
           <ul class="menu-footer">
-            <li><a href="#">Business</a></li>
-            <li><a href="#">First</a></li>
-            <li><a href="#">XL</a></li>
-            <li><a href="#">Assistant</a></li>
+            <li>Via Orio al Serio, 29 (BG)</li>
+            <li><a href="tel:+393397931864">+39 339 793 1864</a></li>
+            <li><a href="mailto:bergamo@ciaorentcar.com">bergamo@ciaorentcar.com</a></li>
+            <li><a href="https://wa.me/393397931864">Whatsapp</a></li>
           </ul>
         </div>
-        <div class="col-lg-3 width-20 wow fadeInUp">
-          <h5 class="text-18-medium color-white mb-20">Download The App</h5>
-          <div class="text-start">
-            <div class="box-button-download"><a class="btn btn-download mb-20 hover-up wow fadeInUp" href="#">
-                <div class="inner-download">
-                  <div class="icon-download"><img src="{% static 'imgs/template/icons/apple-icon.svg' %}" alt="luxride"></div>
-                  <div class="info-download"><span class="text-download-top">Download on the</span><span class="text-14-medium">Apple Store</span></div>
-                </div></a><a class="btn btn-download mb-20 hover-up wow fadeInUp" href="#">
-                <div class="inner-download">
-                  <div class="icon-download"><img src="{% static 'imgs/template/icons/google-icon.svg' %}" alt="luxride"></div>
-                  <div class="info-download"><span class="text-download-top">Download on the</span><span class="text-14-medium">Apple Store</span></div>
-                </div></a></div>
-          </div>
+        
+        <!-- Lecce -->
+        <div class="col-lg-3 width-20 mb-30 wow fadeInUp">
+          <h5 class="text-18-medium color-white mb-20">{% trans "Stazione Lecce" %}</h5>
+          <ul class="menu-footer">
+            <li>Via Lequile, 154 (LE)</li>
+            <li><a href="tel:+390832199127">+39 0832 199 2127</a></li>
+            <li><a href="mailto:lecce@ciaorentcar.com">lecce@ciaorentcar.com</a></li>
+            <li><a href="https://wa.me/393891463950">Whatsapp</a></li>
+          </ul>
+        </div>
+        
+        <!-- Napoli -->
+        <div class="col-lg-3 width-20 mb-30 wow fadeInUp">
+          <h5 class="text-18-medium color-white mb-20">{% trans "Sede Napoli" %}</h5>
+          <ul class="menu-footer">
+            <li>Viale Cmd. U. Maddalena, 214</li>
+            <li><a href="tel:+393383833339">+39 338 383 3339</a></li>
+            <li><a href="mailto:napoli@ciaorentcar.com">napoli@ciaorentcar.com</a></li>
+            <li><a href="https://wa.me/393383833339">Whatsapp</a></li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
-  <div class="footer-2">
+
+<div class="footer-2">
     <div class="container-sub">
       <div class="footer-bottom">
         <div class="row align-items-center">
-          <div class="col-lg-8 col-md-12 text-center text-lg-start"><span class="text-14 color-white mr-50">© 2024 Luxride</span>
+          <div class="col-lg-8 col-md-12 text-center text-lg-start">
+            <span class="text-14 color-white mr-50">© {% now "Y" %} Ciao Rent Car S.r.l. | P.IVA: 08253200961</span>
             <ul class="menu-bottom">
-              <li><a href="term-conditions.html">Terms</a></li>
-              <li><a href="term-conditions.html">Privacy policy</a></li>
-              <li><a href="term-conditions.html">Legal notice</a></li>
-              <li><a href="#">Accessibility</a></li>
+              <li><a href="#">{% trans "Termini" %}</a></li>
+              <li><a href="#">{% trans "Privacy Policy" %}</a></li>
+              <li><a href="#">{% trans "Cookie Policy" %}</a></li>
             </ul>
           </div>
-          <div class="col-lg-4 col-md-12 text-center text-lg-end"><a class="btn btn-link-location" href="#">New York</a><a class="btn btn-link-globe active" href="#">English</a></div>
+          <div class="col-lg-4 col-md-12 text-center text-lg-end">
+            <a class="btn btn-link-globe active" href="#">{{ LANGUAGE_CODE|upper }}</a>
+          </div>
         </div>
       </div>
     </div>

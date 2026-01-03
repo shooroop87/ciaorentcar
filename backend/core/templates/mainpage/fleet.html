@@ -1,53 +1,85 @@
-{% load static %}
+{% load static i18n %}
 <section class="section pt-120 box-fleet-cover">
   <div class="box-fleet-padding">
     <div class="container-sub"> 
       <div class="row align-items-center">
         <div class="col-lg-6 col-7">
-          <h2 class="heading-44-medium title-fleet wow fadeInUp">Our Fleet</h2>
+          <h2 class="heading-44-medium title-fleet wow fadeInUp">{% trans "La Nostra Flotta" %}</h2>
         </div>
-        <div class="col-lg-6 col-5 text-end"><a class="text-16-medium color-primary wow fadeInUp" href="#">More Fleet
+        <div class="col-lg-6 col-5 text-end">
+          <a class="text-16-medium color-primary wow fadeInUp" href="#">{% trans "Tutti i veicoli" %}
             <svg class="icon-16" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
-            </svg></a></div>
+            </svg>
+          </a>
+        </div>
       </div>
       <div class="row mt-50"> 
+        <!-- Auto -->
         <div class="col-lg-4"> 
           <div class="cardFleet cardFleetStyle2 wow fadeInUp">
-            <div class="cardInfo"><a href="#">
-                <h3 class="text-20-medium color-text mb-10">Business Class</h3></a>
-              <p class="text-14 color-text mb-30">Mercedes-Benz E-Class, BMW 5 Series, Cadillac XTS or similar</p>
+            <div class="cardInfo">
+              <a href="#">
+                <h3 class="text-20-medium color-text mb-10">{% trans "Noleggio Auto" %}</h3>
+              </a>
+              <p class="text-14 color-text mb-30">{% trans "Fiat Panda, Fiat 500, Toyota Yaris, Lancia Ypsilon, Ford Focus, Audi A3 e altri" %}</p>
             </div>
-            <div class="cardImage mb-30"><a href="#"><img src="{% static 'imgs/page/homepage1/e-class.png' %}" alt="Luxride"></a></div>
+            <div class="cardImage mb-30">
+              <a href="#">
+                <img src="https://creativelayers.net/themes/boxcar-html/images/resource/vehicles2-5.png" alt="Noleggio Auto">
+              </a>
+            </div>
             <div class="cardInfoBottom">
-              <div class="passenger"><span class="icon-circle icon-passenger"></span><span class="text-14">Passengers<span>4</span></span></div>
-              <div class="luggage"><span class="icon-circle icon-luggage"></span><span class="text-14">Luggage<span>2</span></span></div>
+              <div class="passenger">
+                <span class="icon-circle icon-passenger"></span>
+                <span class="text-14">{% trans "Posti" %}<span> 2-5</span></span>
+              </div>
             </div>
           </div>
         </div>
+        
+        <!-- Furgoni -->
         <div class="col-lg-4"> 
           <div class="cardFleet cardFleetStyle2 wow fadeInUp">
-            <div class="cardInfo"><a href="#">
-                <h3 class="text-20-medium color-text mb-10">First Class</h3></a>
-              <p class="text-14 color-text mb-30">Mercedes-Benz EQS, BMW 7 Series, Audi A8 or similar</p>
+            <div class="cardInfo">
+              <a href="#">
+                <h3 class="text-20-medium color-text mb-10">{% trans "Noleggio Furgoni" %}</h3>
+              </a>
+              <p class="text-14 color-text mb-30">{% trans "Furgoni piccoli, medi e grandi per traslochi, trasporti e attività commerciali" %}</p>
             </div>
-            <div class="cardImage mb-30"><a href="#"><img src="{% static 'imgs/page/homepage1/eqs.png' %}" alt="Luxride"></a></div>
+            <div class="cardImage mb-30">
+              <a href="#">
+                <img src="https://www.ciaorentcar.com/wp-content/uploads/2024/03/furgoni-e1711105952343.jpeg" alt="Noleggio Furgoni">
+              </a>
+            </div>
             <div class="cardInfoBottom">
-              <div class="passenger"><span class="icon-circle icon-passenger"></span><span class="text-14">Passengers<span>4</span></span></div>
-              <div class="luggage"><span class="icon-circle icon-luggage"></span><span class="text-14">Luggage<span>2</span></span></div>
+              <div class="passenger">
+                <span class="icon-circle icon-passenger"></span>
+                <span class="text-14">{% trans "Posti" %}<span> 2-3</span></span>
+              </div>
             </div>
           </div>
         </div>
+        
+        <!-- Scooter -->
         <div class="col-lg-4"> 
           <div class="cardFleet cardFleetStyle2 wow fadeInUp">
-            <div class="cardInfo"><a href="#">
-                <h3 class="text-20-medium color-text mb-10">Business Van/SUV</h3></a>
-              <p class="text-14 color-text mb-30">Mercedes-Benz V-Class, Chevrolet Suburban, Cadillac Escalade, Toyota Alphard or similar</p>
+            <div class="cardInfo">
+              <a href="#">
+                <h3 class="text-20-medium color-text mb-10">{% trans "Noleggio Scooter" %}</h3>
+              </a>
+              <p class="text-14 color-text mb-30">{% trans "Scooter 125cc e 300cc per muoversi agilmente in città. Ideale per Milano." %}</p>
             </div>
-            <div class="cardImage mb-30"><a href="#"><img src="{% static 'imgs/page/homepage1/suv.png' %}" alt="Luxride"></a></div>
+            <div class="cardImage mb-30">
+              <a href="#">
+                <img src="https://www.ciaorentcar.com/wp-content/uploads/2024/03/scooter.jpeg" alt="Noleggio Scooter">
+              </a>
+            </div>
             <div class="cardInfoBottom">
-              <div class="passenger"><span class="icon-circle icon-passenger"></span><span class="text-14">Passengers<span>4</span></span></div>
-              <div class="luggage"><span class="icon-circle icon-luggage"></span><span class="text-14">Luggage<span>2</span></span></div>
+              <div class="passenger">
+                <span class="icon-circle icon-passenger"></span>
+                <span class="text-14">{% trans "Posti" %}<span> 1-2</span></span>
+              </div>
             </div>
           </div>
         </div>

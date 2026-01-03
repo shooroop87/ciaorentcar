@@ -1,45 +1,51 @@
-'      <section class="section pt-120">
-        <div class="container-sub"> 
-          <div class="text-center"> 
-            <h2 class="heading-44-medium">How It Works</h2>
+{% load static i18n %}
+<section class="section pt-120">
+  <div class="container-sub"> 
+    <div class="text-center"> 
+      <h2 class="heading-44-medium">{% trans "Come Funziona" %}</h2>
+    </div>
+    <div class="box-list-how box-list-how-2 mt-90"> 
+      <ul> 
+        <li class="has-arrow"> 
+          <div class="cardWork"> 
+            <div class="cardImage">
+              <img src="https://creativelayers.net/themes/luxride-html/assets/imgs/page/homepage4/route.svg" alt="Cerca">
+            </div>
+            <div class="cardTitle"> 
+              <h5 class="text-20-medium color-text">{% trans "Cerca e Prenota" %}</h5>
+            </div>
+            <div class="cardDesc"> 
+              <p class="color-text text-16">{% trans "Scegli la sede di ritiro, le date e l'orario. Confronta i veicoli disponibili e seleziona quello perfetto per te." %}</p>
+            </div>
           </div>
-          <div class="box-list-how box-list-how-2 mt-90"> 
-            <ul> 
-              <li class="has-arrow"> 
-                <div class="cardWork"> 
-                  <div class="cardImage"> <img src="https://creativelayers.net/themes/luxride-html/assets/imgs/page/homepage4/route.svg" alt="luxride"></div>
-                  <div class="cardTitle"> 
-                    <h5 class="text-20-medium color-text">Create Your Route</h5>
-                  </div>
-                  <div class="cardDesc"> 
-                    <p class="color-text text-16">Enter your pickup & dropoff locations or the number of hours you wish to book a car and driver for</p>
-                  </div>
-                </div>
-              </li>
-              <li class="has-arrow"> 
-                <div class="cardWork"> 
-                  <div class="cardImage"> <img src="https://creativelayers.net/themes/luxride-html/assets/imgs/page/homepage4/vehicle.svg" alt="luxride"></div>
-                  <div class="cardTitle"> 
-                    <h5 class="text-20-medium color-text">Choose Vehicle For You</h5>
-                  </div>
-                  <div class="cardDesc"> 
-                    <p class="color-text text-16">On the day of your ride, you will receive two email and SMS updates one informing you that.</p>
-                  </div>
-                </div>
-              </li>
-              <li> 
-                <div class="cardWork"> 
-                  <div class="cardImage"> <img src="https://creativelayers.net/themes/luxride-html/assets/imgs/page/homepage4/journey.svg" alt="luxride"></div>
-                  <div class="cardTitle"> 
-                    <h5 class="text-20-medium color-text">Enjoy The Journey</h5>
-                  </div>
-                  <div class="cardDesc"> 
-                    <p class="color-text text-16">After your ride has taken place, we would appreciate it if you could rate your car and driver.</p>
-                  </div>
-                </div>
-              </li>
-            </ul>
+        </li>
+        <li class="has-arrow"> 
+          <div class="cardWork"> 
+            <div class="cardImage">
+              <img src="https://creativelayers.net/themes/luxride-html/assets/imgs/page/homepage4/vehicle.svg" alt="Ritira">
+            </div>
+            <div class="cardTitle"> 
+              <h5 class="text-20-medium color-text">{% trans "Ritira il Veicolo" %}</h5>
+            </div>
+            <div class="cardDesc"> 
+              <p class="color-text text-16">{% trans "Presenta i documenti presso la sede scelta. Il nostro team ti consegnerà le chiavi in pochi minuti." %}</p>
+            </div>
           </div>
-        </div>
-        <div class="border-bottom mt-90"></div>
-      </section>
+        </li>
+        <li> 
+          <div class="cardWork"> 
+            <div class="cardImage">
+              <img src="https://creativelayers.net/themes/luxride-html/assets/imgs/page/homepage4/journey.svg" alt="Viaggia">
+            </div>
+            <div class="cardTitle"> 
+              <h5 class="text-20-medium color-text">{% trans "Goditi il Viaggio" %}</h5>
+            </div>
+            <div class="cardDesc"> 
+              <p class="color-text text-16">{% trans "Esplora Milano e l'Italia con libertà. Riconsegna il veicolo alla data stabilita, semplice e veloce." %}</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,30 +1,42 @@
-{% load static %}
+{% load static i18n %}
 <section class="section pt-120">
   <div class="container-sub"> 
     <div class="row align-items-center"> 
       <div class="col-lg-5 mb-30">
-        <div class="box-image-showcase wow fadeInUp"><img src="{% static 'imgs/page/homepage2/showcase.png' %}" alt="luxride">
-          <div class="box-btn-play-video"><a class="btn btn-white" href="#"> <img class="align-middle mr-10" src="{% static 'imgs/page/homepage2/play.svg' %}" alt="luxride">Play Video</a></div>
+        <div class="box-image-showcase wow fadeInUp">
+          <img src="{% static 'imgs/chisiamo.jpg' %}" alt="Ciao Rent Car">
         </div>
       </div>
       <div class="col-lg-7 mb-30">
         <div class="box-region-right">
-          <h2 class="heading-44-medium color-text mb-30 wow fadeInUp">Showcase some impressive numbers.</h2>
-          <p class="text-16 color-text mb-30 wow fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+          <h2 class="heading-44-medium color-text mb-30 wow fadeInUp">{% trans "Prenota con le tariffe low cost in Lombardia" %}</h2>
+          <p class="text-16 color-text mb-30 wow fadeInUp">{% trans "Ciao Rent Car mette a disposizione una vasta gamma di autoveicoli, furgoni e scooter, situati presso l'aeroporto di Bergamo, Malpensa, Linate e la stazione ferroviaria di Milano Centrale." %}</p>
+          <p class="text-16 color-text mb-30 wow fadeInUp">{% trans "Da oltre cinque anni, soddisfiamo le diverse necessità di mobilità dei nostri clienti, garantendo sempre il veicolo più adatto a ogni esperienza." %}</p>
           <div class="row align-items-center"> 
             <div class="col-sm-4 col-6 mb-30"> 
-              <div class="box-number-info wow fadeInUp"><span class="text-20-medium text-number">285</span><span class="text-14 text-number-info">Vehicles </span></div>
+              <div class="box-number-info wow fadeInUp">
+                <span class="text-20-medium text-number">100+</span>
+                <span class="text-14 text-number-info">{% trans "Veicoli" %}</span>
+              </div>
             </div>
             <div class="col-sm-4 col-6 mb-30"> 
-              <div class="box-number-info wow fadeInUp"><span class="text-20-medium text-number">97</span><span class="text-14 text-number-info">Awards</span></div>
+              <div class="box-number-info wow fadeInUp">
+                <span class="text-20-medium text-number">5</span>
+                <span class="text-14 text-number-info">{% trans "Sedi in Italia" %}</span>
+              </div>
             </div>
             <div class="col-sm-4 col-12 mb-30"> 
-              <div class="box-number-info wow fadeInUp"><span class="text-20-medium text-number">13K</span><span class="text-14 text-number-info">Happy Customer </span></div>
+              <div class="box-number-info wow fadeInUp">
+                <span class="text-20-medium text-number">10K+</span>
+                <span class="text-14 text-number-info">{% trans "Clienti" %}</span>
+              </div>
             </div>
-          </div><a class="btn btn-secondary wow fadeInUp">Learn More
+          </div>
+          <a class="btn btn-secondary wow fadeInUp" href="#">{% trans "Scopri chi siamo" %}
             <svg class="icon-16 ml-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
-            </svg></a>
+            </svg>
+          </a>
         </div>
       </div>
     </div>

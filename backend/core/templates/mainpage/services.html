@@ -1,43 +1,61 @@
-{% load static %}
+{% load static i18n %}
 <section class="section pt-120">
   <div class="container-sub"> 
     <div class="text-center"> 
-      <h2 class="heading-44-medium wow fadeInUp">Our Services</h2>
+      <h2 class="heading-44-medium wow fadeInUp">{% trans "I Nostri Servizi" %}</h2>
     </div>
     <div class="row mt-60">
       <div class="col-lg-4 mb-30"> 
         <div class="cardServiceStyle2 wow fadeInUp">
-          <div class="cardImage"><a href="service-single.html"><img src="{% static 'imgs/page/homepage2/intercity.png' %}" alt="Luxride"></a></div>
+          <div class="cardImage">
+            <a href="#">
+              <img src="{% static 'imgs/auto.jpg' %}" alt="Noleggio Auto">
+            </a>
+          </div>
           <div class="cardInfo">
-            <h3 class="cardTitle text-20-medium color-text mb-10">Intercity Rides</h3>
-            <p class="cardDesc text-14 color-text mb-10">Lorem ipsum dolor sit amet, consvi etur sad ips cing elitr, sed diam non umy eirm</p><a class="cardLink btn btn-link hover-up" href="service-single.html">Learn more
+            <h3 class="cardTitle text-20-medium color-text mb-10">{% trans "Noleggio Auto" %}</h3>
+            <p class="cardDesc text-14 color-text mb-10">{% trans "Auto compatte, berline e SUV per ogni esigenza. Ritiro presso aeroporti e stazione centrale di Milano." %}</p>
+            <a class="cardLink btn btn-link hover-up" href="#">{% trans "Scopri di più" %}
               <svg class="icon-16" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
-              </svg></a>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
       <div class="col-lg-4 mb-30"> 
         <div class="cardServiceStyle2 wow fadeInUp">
-          <div class="cardImage"><a href="service-single.html"><img src="{% static 'imgs/page/homepage2/chauffeur.png' %}" alt="Luxride"></a></div>
+          <div class="cardImage">
+            <a href="#">
+              <img src="{% static '/imgs/furgoni.jpg' %}" alt="Noleggio Furgoni">
+            </a>
+          </div>
           <div class="cardInfo">
-            <h3 class="cardTitle text-20-medium color-text mb-10">Chauffeur Hailing</h3>
-            <p class="cardDesc text-14 color-text mb-10">Lorem ipsum dolor sit amet, consvi etur sad ips cing elitr, sed diam non umy eirm</p><a class="cardLink btn btn-link hover-up" href="service-single.html">Learn more
+            <h3 class="cardTitle text-20-medium color-text mb-10">{% trans "Noleggio Furgoni" %}</h3>
+            <p class="cardDesc text-14 color-text mb-10">{% trans "Furgoni di varie dimensioni per traslochi, trasporti e attività commerciali." %}</p>
+            <a class="cardLink btn btn-link hover-up" href="#">{% trans "Scopri di più" %}
               <svg class="icon-16" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
-              </svg></a>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
       <div class="col-lg-4 mb-30"> 
         <div class="cardServiceStyle2 wow fadeInUp">
-          <div class="cardImage"><a href="service-single.html"><img src="{% static 'imgs/page/homepage2/airport.png' %}" alt="Luxride"></a></div>
+          <div class="cardImage">
+            <a href="#">
+              <img src="{% static 'imgs/scooter.jpg' %}" alt="Noleggio Scooter">
+            </a>
+          </div>
           <div class="cardInfo">
-            <h3 class="cardTitle text-20-medium color-text mb-10">Airport Transfers</h3>
-            <p class="cardDesc text-14 color-text mb-10">Lorem ipsum dolor sit amet, consvi etur sad ips cing elitr, sed diam non umy eirm</p><a class="cardLink btn btn-link hover-up" href="service-single.html">Learn more
+            <h3 class="cardTitle text-20-medium color-text mb-10">{% trans "Noleggio Scooter" %}</h3>
+            <p class="cardDesc text-14 color-text mb-10">{% trans "Scooter per muoversi agilmente in città. Ideale per spostamenti urbani." %}</p>
+            <a class="cardLink btn btn-link hover-up" href="#">{% trans "Scopri di più" %}
               <svg class="icon-16" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
-              </svg></a>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
