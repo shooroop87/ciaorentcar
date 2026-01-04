@@ -13,22 +13,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY", "1insecure1-1default1")
 
 # DEBUG
-DEBUG = True
+DEBUG = False
 
-# ALLOWED_HOSTS
+# ALLOWED_HOSTSa
 if DEBUG:
     ALLOWED_HOSTS = ["*"]
 else:
-    ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost 127.0.0.1 217.154.149.73 ciaorentcar.com www.ciaorentcar.com").split()
+    ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost 127.0.0.1 79.174.86.247 parisweek.ru www.parisweek.ru").split()
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost",
-    "http://localhost:1000",
-    "http://127.0.0.1:1000",
-    "http://localhost:1000",
-    "http://127.0.0.1:1000",
-    "https://ciaorentcar.com",
-    "https://www.ciaorentcar.com",
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
+    "https://parisweek.ru",
+    "https://www.parisweek.ru",
 ]
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -227,7 +225,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "")
 
-DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "ciaorentcar <info@ciaorentcar.com>")
+DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "ciaorentcar <info@parisweek.ru>")
 
 # ===========================================
 # THUMBNAILS (Filer)
