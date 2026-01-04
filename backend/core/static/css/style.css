@@ -186,7 +186,7 @@ input,
 select,
 button,
 textarea {
-  font-family: "DM Sans", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 14px;
 }
 
@@ -280,11 +280,13 @@ input[type=number]:focus,
 }
 
 body {
-  font-family: "DM Sans", sans-serif;
+  /* font-family: "IBM Plex Sans", sans-serif; */
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "DM Sans", sans-serif;
+  /* font-family: "IBM Plex Sans", sans-serif; */
+  font-family: "IBM Plex Sans", sans-serif;
   font-style: normal;
   color: #000000;
 }
@@ -928,7 +930,7 @@ h4 {
 
 /*TYPOGRAPHY*/
 body {
-  font-family: "DM Sans", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 14px;
   line-height: 18px;
   font-style: normal;
@@ -939,7 +941,7 @@ body {
 .btn {
   border-radius: 4px;
   padding: 10px 0px 10px 22px;
-  font-family: "DM Sans", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
@@ -1493,6 +1495,7 @@ body {
   position: relative;
   height: 100%;
   padding-bottom: 35px;
+  border-radius: 15px;
 }
 .box-swiper .swiper-container .item-logo {
   border: 1px solid #ccc;
@@ -2221,7 +2224,7 @@ body {
   font-size: 14px;
   line-height: 24px;
   font-weight: 500;
-  font-family: "DM Sans", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 .card-plan {
@@ -2630,7 +2633,7 @@ body {
 
 .box-banner-info {
   position: absolute;
-  top: 40%;
+  top: 70%;
   left: 0px;
   width: 100%;
   z-index: 3;
@@ -2725,7 +2728,7 @@ body {
   font-size: 14px;
   line-height: 35px;
   color: #181A1F;
-  font-family: "DM Sans", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   transition: none;
   font-weight: 500;
 }
@@ -2944,10 +2947,10 @@ body {
   margin: 5px 0;
 }
 .header .main-menu li a {
-  font-family: "DM Sans", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 15px;
   color: #fff;
   line-height: 24px;
   display: block;
@@ -3604,7 +3607,7 @@ body {
 .mobile-header-wrapper-style .mobile-header-wrapper-inner .mobile-header-content-area .mobile-menu-wrap nav .mobile-menu li a {
   font-size: 24px;
   line-height: 32px;
-  font-family: "DM Sans", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   text-transform: capitalize;
   font-weight: 500;
   position: relative;
@@ -5918,15 +5921,15 @@ footer a {
 
 .box-search-ride {
   background-color: #ffffff;
-  border-radius: 100px;
+  border-radius: 25px;
   padding: 20px 5px;
   position: absolute;
-  bottom: 50px;
+  top: 20px;
   left: 0px;
   right: 0px;
   margin: auto;
   z-index: 3;
-  max-width: 1170px;
+  max-width: 1400px;
   display: flex;
   align-items: center;
 }
