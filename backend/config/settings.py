@@ -46,8 +46,6 @@ INSTALLED_APPS = [
     "parler",
     "taggit",
     "meta",
-    "filer",
-    "mptt",
     # Local
     "core"
 ]
