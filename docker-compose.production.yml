@@ -35,6 +35,8 @@ services:
     env_file: .env
     environment:
       - DOCKER_ENV=true  # НОВОЕ: Включаем упрощенное логирование для Docker
+      - POSTGRES_HOST=db
+      - REDIS_URL=redis://redis:6379/0
     volumes:
       - static_volume:/app/collected_static
       - media:/app/media/
