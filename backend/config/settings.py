@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     "parler",
     "taggit",
     "meta",
-    "easy_thumbnails",
     "filer",
     "mptt",
     # Local
