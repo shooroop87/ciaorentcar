@@ -164,12 +164,16 @@ jobs:
             sudo docker system prune -f
             sudo docker compose -f docker-compose.production.yml pull
 
-            echo "🔄 Restarting application services..."
-            sudo docker compose -f docker-compose.production.yml up -d --no-deps backend gateway
+            echo "🔄 Ensuring database is running..."
+            sudo docker compose -f docker-compose.production.yml up -d db redis
 
             echo "⏳ Waiting for services to start..."
             sleep 30
 
+            echo "🔄 Restarting application services..."
+            sudo docker compose -f docker-compose.production.yml up -d backend gateway
+
+            echo "📋 Current status of services:"
             sudo docker compose -f docker-compose.production.yml ps
 
             echo "🧹 Safe cleanup (preserving data)..."
